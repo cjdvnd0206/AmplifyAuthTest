@@ -3,23 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130D7A71F645446FBE9F61B4 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B655726E7B6451596C01B47 /* awsconfiguration.json */; };
+		1528E154B98A45F88CEA51EA /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E8254C387A184FA6BF17AD50 /* amplifyconfiguration.json */; };
 		CE097A7126368EF2005BDFB0 /* AmplifyAuthTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097A7026368EF2005BDFB0 /* AmplifyAuthTestApp.swift */; };
-		CE097A7326368EF2005BDFB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097A7226368EF2005BDFB0 /* ContentView.swift */; };
+		CE097A7326368EF2005BDFB0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097A7226368EF2005BDFB0 /* SignUpView.swift */; };
 		CE097A7526368EF4005BDFB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE097A7426368EF4005BDFB0 /* Assets.xcassets */; };
 		CE097A7826368EF4005BDFB0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE097A7726368EF4005BDFB0 /* Preview Assets.xcassets */; };
+		CE097A82263690A2005BDFB0 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097A81263690A2005BDFB0 /* ConfirmationView.swift */; };
+		CE097A8626369145005BDFB0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097A8526369145005BDFB0 /* LoginView.swift */; };
+		CE097A8926369235005BDFB0 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097A8826369235005BDFB0 /* SessionView.swift */; };
+		CE097A97263694EF005BDFB0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097A96263694EF005BDFB0 /* SessionManager.swift */; };
+		F84A2C93FE8CDA206006C80B /* Pods_AmplifyAuthTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AEA2028F1ADF3C86010DC /* Pods_AmplifyAuthTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04190AC040C640989E557444 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
+		1CD7841C5851F2310D9F2805 /* Pods-AmplifyAuthTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmplifyAuthTest.release.xcconfig"; path = "Target Support Files/Pods-AmplifyAuthTest/Pods-AmplifyAuthTest.release.xcconfig"; sourceTree = "<group>"; };
+		6A25C6352867B40E1FA6CAB1 /* Pods-AmplifyAuthTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmplifyAuthTest.debug.xcconfig"; path = "Target Support Files/Pods-AmplifyAuthTest/Pods-AmplifyAuthTest.debug.xcconfig"; sourceTree = "<group>"; };
+		7B655726E7B6451596C01B47 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
+		7B6AEA2028F1ADF3C86010DC /* Pods_AmplifyAuthTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmplifyAuthTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE097A6D26368EF2005BDFB0 /* AmplifyAuthTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmplifyAuthTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE097A7026368EF2005BDFB0 /* AmplifyAuthTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplifyAuthTestApp.swift; sourceTree = "<group>"; };
-		CE097A7226368EF2005BDFB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE097A7226368EF2005BDFB0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		CE097A7426368EF4005BDFB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE097A7726368EF4005BDFB0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE097A7926368EF4005BDFB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE097A81263690A2005BDFB0 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		CE097A8526369145005BDFB0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CE097A8826369235005BDFB0 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		CE097A96263694EF005BDFB0 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		E8254C387A184FA6BF17AD50 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +44,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84A2C93FE8CDA206006C80B /* Pods_AmplifyAuthTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130FDAA7C0E97DC65FC3E88E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A25C6352867B40E1FA6CAB1 /* Pods-AmplifyAuthTest.debug.xcconfig */,
+				1CD7841C5851F2310D9F2805 /* Pods-AmplifyAuthTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		66406C78CAE244E5BBBCADC1 /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				04190AC040C640989E557444 /* amplifytools.xcconfig */,
+				E8254C387A184FA6BF17AD50 /* amplifyconfiguration.json */,
+				7B655726E7B6451596C01B47 /* awsconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			path = .;
+			sourceTree = "<group>";
+		};
+		6F3022808906AC1FAD82EEAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B6AEA2028F1ADF3C86010DC /* Pods_AmplifyAuthTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE097A6426368EF2005BDFB0 = {
 			isa = PBXGroup;
 			children = (
+				66406C78CAE244E5BBBCADC1 /* AmplifyConfig */,
 				CE097A6F26368EF2005BDFB0 /* AmplifyAuthTest */,
 				CE097A6E26368EF2005BDFB0 /* Products */,
+				130FDAA7C0E97DC65FC3E88E /* Pods */,
+				6F3022808906AC1FAD82EEAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,7 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				CE097A7026368EF2005BDFB0 /* AmplifyAuthTestApp.swift */,
-				CE097A7226368EF2005BDFB0 /* ContentView.swift */,
+				CE097A7226368EF2005BDFB0 /* SignUpView.swift */,
+				CE097A81263690A2005BDFB0 /* ConfirmationView.swift */,
+				CE097A8526369145005BDFB0 /* LoginView.swift */,
+				CE097A8826369235005BDFB0 /* SessionView.swift */,
+				CE097A96263694EF005BDFB0 /* SessionManager.swift */,
 				CE097A7426368EF4005BDFB0 /* Assets.xcassets */,
 				CE097A7926368EF4005BDFB0 /* Info.plist */,
 				CE097A7626368EF4005BDFB0 /* Preview Content */,
@@ -76,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE097A7C26368EF4005BDFB0 /* Build configuration list for PBXNativeTarget "AmplifyAuthTest" */;
 			buildPhases = (
+				F6381B595480D72F6B8F7CF4 /* [CP] Check Pods Manifest.lock */,
 				CE097A6926368EF2005BDFB0 /* Sources */,
 				CE097A6A26368EF2005BDFB0 /* Frameworks */,
 				CE097A6B26368EF2005BDFB0 /* Resources */,
+				4D6F04660157D3D0D89B8FF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,17 +183,65 @@
 			files = (
 				CE097A7826368EF4005BDFB0 /* Preview Assets.xcassets in Resources */,
 				CE097A7526368EF4005BDFB0 /* Assets.xcassets in Resources */,
+				1528E154B98A45F88CEA51EA /* amplifyconfiguration.json in Resources */,
+				130D7A71F645446FBE9F61B4 /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D6F04660157D3D0D89B8FF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AmplifyAuthTest/Pods-AmplifyAuthTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AmplifyAuthTest/Pods-AmplifyAuthTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmplifyAuthTest/Pods-AmplifyAuthTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6381B595480D72F6B8F7CF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AmplifyAuthTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE097A6926368EF2005BDFB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE097A7326368EF2005BDFB0 /* ContentView.swift in Sources */,
+				CE097A7326368EF2005BDFB0 /* SignUpView.swift in Sources */,
+				CE097A8926369235005BDFB0 /* SessionView.swift in Sources */,
+				CE097A97263694EF005BDFB0 /* SessionManager.swift in Sources */,
+				CE097A82263690A2005BDFB0 /* ConfirmationView.swift in Sources */,
+				CE097A8626369145005BDFB0 /* LoginView.swift in Sources */,
 				CE097A7126368EF2005BDFB0 /* AmplifyAuthTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +367,7 @@
 		};
 		CE097A7D26368EF4005BDFB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A25C6352867B40E1FA6CAB1 /* Pods-AmplifyAuthTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +390,7 @@
 		};
 		CE097A7E26368EF4005BDFB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CD7841C5851F2310D9F2805 /* Pods-AmplifyAuthTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
