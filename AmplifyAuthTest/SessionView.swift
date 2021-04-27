@@ -22,9 +22,10 @@ struct SessionView: View {
             
             Spacer()
             Button("로그아웃", action: {
-                sessionManager.signOut()
+                    sessionManager.signOut().store(in: &sessionManager.cancelableSet)
             })
         }
+        .padding()
     }
 }
 

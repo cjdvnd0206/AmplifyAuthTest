@@ -6,6 +6,7 @@
 //
 
 import Amplify
+import Combine
 
 enum AuthState {
     case signUp
@@ -16,94 +17,116 @@ enum AuthState {
 
 final class SessionManager: ObservableObject {
     @Published var authState: AuthState = .login
+    @Published var errorRecieve = PassthroughSubject<AuthError, Never>()
+    var cancelableSet = Set<AnyCancellable>()
+    
     
     func getCurrentAuthUser() {
         if let user = Amplify.Auth.getCurrentUser() {
-            authState = .session(user: user)
+            DispatchQueue.main.async {
+                self.authState = .session(user: user)
+            }
+            
         } else {
-            authState = .login
+            DispatchQueue.main.async {
+                self.authState = .login
+            }
         }
     }
     
     func showSignUp() {
-        authState = .signUp
+        DispatchQueue.main.async {
+            self.authState = .signUp
+        }
+        
     }
     
     func showLogin() {
-        authState = .login
+        DispatchQueue.main.async {
+            self.authState = .login
+        }
     }
     
-    func signUp(username: String, email: String, password: String) {
+    func signUp(username: String, email: String, password: String) -> AnyCancellable {
         let attributes = [AuthUserAttribute(.email, value: email)]
         let options = AuthSignUpRequest.Options(userAttributes: attributes)
         
-        _ = Amplify.Auth.signUp(username: username, password: password, options: options) { result in
-            switch result {
-            case .success(let signUpResult):
-                print("회원가입 결과: ", signUpResult)
-                
-                switch signUpResult.nextStep {
-                case .done:
-                    print("회원가입 완료")
-                case .confirmUser(let details, _):
+        let sink = Amplify.Auth.signUp(username: username, password: password, options: options)
+            .resultPublisher
+            .sink {
+                if case let .failure(error) = $0 {
+                    print("인증번호 전송 실패: ", error)
+                }
+            }
+            receiveValue: { signUpResult in
+                if case let .confirmUser(details, _) = signUpResult.nextStep {
                     print(details ?? "세부사항 없음")
-                    
-                    DispatchQueue.main.async {
-                        self.authState = .confirmCode(username: username)
-                    }
+                } else {
+                    print("인증번호 전송 완료")
                 }
-            case .failure(let error):
-                print("회원가입 실패: ", error)
-            }
-        }
-    }
-    
-    func confirm(username: String, code: String) {
-        _ = Amplify.Auth.confirmSignUp(for: username, confirmationCode: code) { [weak self] result in
-            
-            switch result {
-            case .success(let confirmResult):
-                print(confirmResult)
-                if confirmResult.isSignupComplete {
-                    DispatchQueue.main.async {
-                        self?.showLogin()
-                    }
-                }
-            case .failure(let error):
-                print("인증애 실패하였습니다: ", error)
-            }
-            
-        }
-    }
-    
-    func login(username: String, password: String) {
-        _ = Amplify.Auth.signIn(username: username, password: password) { [weak self] result in
-            
-            switch result {
-            case .success(let signInResult):
-                print(signInResult)
-                if signInResult.isSignedIn {
-                    DispatchQueue.main.async {
-                        self?.getCurrentAuthUser()
-                    }
-                }
-            case .failure(let error):
-                print("로그인 에러: ", error)
-            }
-        }
-    }
-    
-    func signOut() {
-        _ = Amplify.Auth.signOut { [weak self] result in
-        
-            switch result {
-            case .success:
+                
                 DispatchQueue.main.async {
-                    self?.getCurrentAuthUser()
+                    self.authState = .confirmCode(username: username)
                 }
-            case .failure(let error):
-                print("로그아웃 에러: ", error)
             }
-        }
+        
+        return sink
+    }
+    
+    func confirm(username: String, code: String) -> AnyCancellable {
+        Amplify.Auth.confirmSignUp(for: username, confirmationCode: code)
+            .resultPublisher
+            .sink {
+                if case let .failure(error) = $0 {
+                    print("인증실패: ", error)
+                }
+            }
+            receiveValue: { _ in
+                print("인증 성공!")
+                self.showLogin()
+            }
+    }
+    
+    func resendCode() -> AnyCancellable {
+        Amplify.Auth.resendConfirmationCode(for: .email)
+            .resultPublisher
+            .sink {
+                if case let .failure(error) = $0 {
+                    print("인증번호 재전송 실패: \(error)")
+                }
+            }
+            receiveValue: { deliveryDetails in
+                print("인증번호 재전송 성공 - \(deliveryDetails)")
+            }
+    }
+    
+    func login(username: String, password: String) -> AnyCancellable {
+        Amplify.Auth.signIn(username: username, password: password)
+            .resultPublisher
+            .sink {
+                if case let .failure(error) = $0 {
+                    print("로그인 실패: ", error)
+                    self.errorRecieve.send(error)
+                    
+                }
+            }
+            receiveValue: { _ in
+                print("로그인 성공!")
+                self.getCurrentAuthUser()
+            }
+    }
+    
+    func signOut() -> AnyCancellable {
+        Amplify.Auth.signOut()
+            .resultPublisher
+            .sink {
+                if case let .failure(error) = $0 {
+                    print("로그아웃 실패: ", error)
+                }
+            }
+            receiveValue: {
+                print("로그아웃 성공!")
+                self.getCurrentAuthUser()
+            }
     }
 }

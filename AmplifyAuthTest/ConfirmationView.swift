@@ -17,11 +17,15 @@ struct ConfirmationView: View {
     
     var body: some View {
         VStack {
+            Text("이메일 인증")
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+            
             Text("아이디: \(username)")
             TextField("인증번호", text: $confirmationCode)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             Button("확인", action: {
-                    sessionManager.confirm(username: username, code: confirmationCode)
+                sessionManager.confirm(username: username, code: confirmationCode).store(in: &sessionManager.cancelableSet)
             })
         }
         .padding()
@@ -30,6 +34,6 @@ struct ConfirmationView: View {
 
 struct ConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView(username: "윤병진")
+        ConfirmationView(username: "")
     }
 }
